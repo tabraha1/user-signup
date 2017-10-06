@@ -1,0 +1,27 @@
+<html>
+        <head>
+        <style>
+          .error {color: red}
+        </style>
+          <title>Flask Intro - login page</title>
+        </head>
+        <body>
+          <div class="container">
+            <h1>Please login</h1>
+            <form action="" method="post">
+              <input type="text" placeholder="Username" name="username" value="{{
+                request.form.username }}">
+               <input type="password" placeholder="Password" name="password" value="{{
+                request.form.password }}">
+                <input type="password" placeholder="Verify Password" name="verify" value="{{
+                  request.form.verify }}">
+                <input type="text" placeholder="Email (optional)" name="email" value="{{
+                  request.form.email }}">
+              <input type="submit" value="Login">
+            </form>
+            {% if error %}
+              <p class="error"><strong>Error:</strong> {{ error }}
+            {% endif %}
+          </div>
+        </body>
+      </html>
